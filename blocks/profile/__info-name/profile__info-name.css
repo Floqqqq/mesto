@@ -1,0 +1,10 @@
+.profile__info-name {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  max-width: 294px;
+  max-height: 39px;
+  margin: 0;
+}
