@@ -4,4 +4,14 @@
   box-sizing: border-box;
   background-repeat: no-repeat;
   box-sizing: border-box;
+  background-size: contain;
+}
+
+@media (max-width: 1279px) {
+  .header__logo {
+    margin-left: 27px;
+    min-height: 24px;
+    background-position: 50%;
+    max-width: 103px;
+  }
 }
