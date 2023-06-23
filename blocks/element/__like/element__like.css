@@ -1,0 +1,10 @@
+.element__like {
+  background-image: url(../../../images/like.png);
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-position: 50% 50%;
+
+  min-width: 22px;
+  min-height: 19px;
+}
