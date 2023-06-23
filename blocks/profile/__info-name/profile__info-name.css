@@ -8,3 +8,11 @@
   max-height: 39px;
   margin: 0;
 }
+
+@media (max-width: 1279px) {
+  .profile__info-name {
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+  }
+}
