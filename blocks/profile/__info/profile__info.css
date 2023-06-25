@@ -3,6 +3,7 @@
   max-width: 336px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 0;
 }
 

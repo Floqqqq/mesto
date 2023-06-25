@@ -4,7 +4,17 @@
   background-repeat: no-repeat;
   box-sizing: border-box;
   background-position: 50% 50%;
-
+  border: none;
   min-width: 22px;
   min-height: 19px;
+  background-color: #ffffff;
+  padding: 0;
+}
+.element__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.element__like:active {
+  background-image: url(../../../images/like_active.png);
 }
