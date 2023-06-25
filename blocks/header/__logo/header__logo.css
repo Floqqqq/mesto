@@ -1,6 +1,7 @@
 .header__logo {
   background-image: url(../../../images/logo.png);
   min-height: 33px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-repeat: no-repeat;
   box-sizing: border-box;
