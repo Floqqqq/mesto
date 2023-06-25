@@ -1,5 +1,5 @@
 .element__like {
-  background-image: url(../../../images/like.png);
+  background-image: url(/images/like.png);
   box-sizing: border-box;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -16,5 +16,5 @@
 }
 
 .element__like:active {
-  background-image: url(../../../images/like_active.png);
+  background-image: url(/images/like_active.png);
 }
