@@ -13,7 +13,9 @@ buttonClosePopup.addEventListener("click", togglePopup);
 let inputName = popupProfie.querySelector(".popup__input_type_name");
 let inputJob = popupProfie.querySelector(".popup__input_type_job");
 let profileName = document.querySelector(".profile__info-name_type_name");
-let profileJob = document.querySelector(".profile__info-name_type_activity");
+let profileJob = document.querySelector(
+  ".profile__info-activity_type_activity"
+);
 const buttonSavePopup = popupProfie.querySelector(".popup__content-button");
 
 function handleFormSubmit(evt) {
