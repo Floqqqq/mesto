@@ -1,5 +1,5 @@
 .popup__close {
-  background-image: url(/images/CloseIcon.png);
+  background-image: url(../../../images/CloseIcon.png);
   padding: 0;
   min-width: 32px;
   min-height: 32px;
