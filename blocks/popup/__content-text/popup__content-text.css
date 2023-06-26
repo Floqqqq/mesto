@@ -6,3 +6,10 @@
   max-width: 330px;
   margin: 34px 87px 48px 36px;
 }
+@media (max-width: 1279px) {
+  .popup__content-text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
