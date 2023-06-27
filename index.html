@@ -16,21 +16,17 @@
           <div class="profile__item">
             <div class="profile__avatar"></div>
             <div class="profile__info">
-              <h1 class="profile__info-name profile__info-name_type_name">
-                Жак-Ив Кусто
-              </h1>
+              <h1 class="profile__info-name profile__info-name_type_name">Жак-Ив Кусто</h1>
               <button
                 type="button"
                 class="profile__edit-button profile__edit-button_type_profile"
               ></button>
               <p
                 class="profile__info-activity profile__info-activity_type_activity"
-              >
-                Исследователь океана
-              </p>
+              >Исследователь океана</p>
             </div>
           </div>
-          <button class="profile__add-button"></button>
+          <button type="button" class="profile__add-button"></button>
         </section>
         <section class="elements">
           <article class="element">
@@ -41,7 +37,7 @@
             />
             <div class="element__group">
               <h2 class="element__place">Карачаевск</h2>
-              <button class="element__like"></button>
+              <button type="button" class="element__like"></button>
             </div>
           </article>
           <article class="element">
@@ -91,13 +87,15 @@
               class="element__image"
             />
             <div class="element__group">
-              <h2 class="element__place">Карачаево-Ч...</h2>
+              <h2 class="element__place">Карачаево Черкесия</h2>
               <button class="element__like"></button>
             </div>
           </article>
         </section>
       </main>
-      <footer class="footer"><p>© 2020 Mesto Russia</p></footer>
+      <footer class="footer">
+        <p class="footer__text">© 2020 Mesto Russia</p>
+      </footer>
       <div class="popup popup_type_profile">
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
@@ -105,14 +103,14 @@
           <form class="edit-form">
             <input
               type="text"
-              value="Жак-Ив Кусто"
+              value=""
               name="name"
               placeholder="Имя"
               class="popup__input popup__input_type_name"
             />
             <input
               type="text"
-              value="Исследователь океана"
+              value=""
               name="AboutMe"
               placeholder="О себе"
               class="popup__input popup__input_type_job"
