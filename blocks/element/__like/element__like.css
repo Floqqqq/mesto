@@ -1,5 +1,5 @@
 .element__like {
-  background-image: url(../../../images/like.png);
+  background-image: url(../../../images/like.svg);
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -8,12 +8,9 @@
   min-height: 19px;
   background-color: #ffffff;
   padding: 0;
+  transition: 0.3s;
 }
 .element__like:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-.element__like:active {
-  background-image: url(../../../images/like_active.png);
 }

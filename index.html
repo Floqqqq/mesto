@@ -22,76 +22,12 @@
                 class="profile__edit-button profile__edit-button_type_profile"
               ></button>
               <p
-                class="profile__info-activity profile__info-activity_type_activity"
-              >Исследователь океана</p>
+                class="profile__info-activity profile__info-activity_type_activity">Исследователь океана</p>
             </div>
           </div>
           <button type="button" class="profile__add-button"></button>
         </section>
-        <section class="elements">
-          <article class="element">
-            <img
-              src="./images/karachaevsk.png"
-              alt="Карачаевск"
-              class="element__image"
-            />
-            <div class="element__group">
-              <h2 class="element__place">Карачаевск</h2>
-              <button type="button" class="element__like"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img src="./images/elbrus.png" alt="гора" class="element__image" />
-            <div class="element__group">
-              <h2 class="element__place">Гора Эльбрус</h2>
-              <button type="button" class="element__like"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              src="./images/dombai.png"
-              alt="Домбай"
-              class="element__image"
-            />
-            <div class="element__group">
-              <h2 class="element__place">Домбай</h2>
-              <button type="button" class="element__like"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              src="./images/elbrus.png"
-              alt="Гора Эльбрус"
-              class="element__image"
-            />
-            <div class="element__group">
-              <h2 class="element__place">Гора Эльбрус</h2>
-              <button type="button" class="element__like"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              src="./images/dombai.png"
-              alt="Домбайра"
-              class="element__image"
-            />
-            <div class="element__group">
-              <h2 class="element__place">Домбай</h2>
-              <button type="button" class="element__like"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              src="./images/karachaevsk.png"
-              alt="Карачаево"
-              class="element__image"
-            />
-            <div class="element__group">
-              <h2 class="element__place">Карачаево Черкесия</h2>
-              <button type="button" class="element__like"></button>
-            </div>
-          </article>
-        </section>
+        <section class="elements"></section>
       </main>
       <footer class="footer">
         <p class="footer__text">© 2020 Mesto Russia</p>
@@ -121,7 +57,52 @@
           </form>
         </div>
       </div>
+      <div class="popup popup_type_publication">
+        <div class="popup__content">
+          <button type="button" class="popup__close"></button>
+          <h2 class="popup__content-text">Новое место</h2>
+          <form
+            method="post"
+            name="edit-form"
+            class="edit-form edit-form_type_publication"
+          >
+            <input
+              type="text"
+              value=""
+              name="title"
+              placeholder="Название"
+              class="popup__input popup__input_type_title"
+            />
+            <input
+              type="text"
+              value=""
+              name="LinkToPicture"
+              placeholder="Ссылка на картинку"
+              class="popup__input popup__input_type_link"
+            />
+            <button type="submit" class="popup__content-button">Создать</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup_type_full-screen">
+        <figure class="popup__figure">
+          <button type="button" class="popup__close"></button>
+          <img src="" alt="" class="popup__figure-image" />
+          <figcaption class="popup__figcaption"></figcaption>
+        </figure>
+      </div>
     </div>
+    <template class="elemet-template">
+      <article class="element">
+        <img src="" alt="" class="element__image" />
+        <button type="reset" class="element__trash"></button>
+        <div class="element__group">
+          <h2 class="element__place"></h2>
+          <button type="button" class="element__like"></button>
+        </div>
+      </article>
+    </template>
+    <template class="image-template"> </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
