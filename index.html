@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
+    <script defer src="./scripts/constants.js"></script>
+    <script defer src="./scripts/index.js"></script>
   </head>
   <body class="root">
     <div class="main-page">
@@ -22,7 +24,8 @@
                 class="profile__edit-button profile__edit-button_type_profile"
               ></button>
               <p
-                class="profile__info-activity profile__info-activity_type_activity">Исследователь океана</p>
+                class="profile__info-activity profile__info-activity_type_activity"
+              >Исследователь океана</p>
             </div>
           </div>
           <button type="button" class="profile__add-button"></button>
@@ -39,14 +42,12 @@
           <form method="post" name="edit-form" class="edit-form">
             <input
               type="text"
-              value=""
               name="name"
               placeholder="Имя"
               class="popup__input popup__input_type_name"
             />
             <input
               type="text"
-              value=""
               name="AboutMe"
               placeholder="О себе"
               class="popup__input popup__input_type_job"
@@ -68,13 +69,15 @@
           >
             <input
               type="text"
+              required="required"
               value=""
               name="title"
               placeholder="Название"
               class="popup__input popup__input_type_title"
             />
             <input
-              type="text"
+              type="url"
+              required="required"
               value=""
               name="LinkToPicture"
               placeholder="Ссылка на картинку"
@@ -87,14 +90,14 @@
       <div class="popup popup_type_full-screen">
         <figure class="popup__figure">
           <button type="button" class="popup__close"></button>
-          <img  alt="" class="popup__figure-image" />
+          <img alt="" class="popup__figure-image" />
           <figcaption class="popup__figcaption"></figcaption>
         </figure>
       </div>
     </div>
     <template class="elemet-template">
       <article class="element">
-        <img  alt="" class="element__image" />
+        <img alt="" class="element__image" />
         <button type="reset" class="element__trash"></button>
         <div class="element__group">
           <h2 class="element__place"></h2>
@@ -102,7 +105,5 @@
         </div>
       </article>
     </template>
-    <template class="image-template"> </template>
-    <script src="./scripts/index.js"></script>
   </body>
 </html>
