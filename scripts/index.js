@@ -86,10 +86,11 @@ const createCard = (link, name) => {
     .addEventListener("click", () => {
       //const elementPlace = elementEl.querySelector(".element__place");
       //const elementImages = elementEl.querySelector(".element__image");
+      imageFullScreen.alt = `Изображение ${name}`;
       imageFullScreen.src = cardImage.src;
       tiitleFullScreen.textContent = cardName.textContent;
+      openPopup(popupImageFullScreen)
 
-      popupImageFullScreen.classList.add("popup_opened");
     });
   return elementEl;
 };
@@ -119,8 +120,7 @@ function addPublication(titleValue, linkValue) {
 editFormPublication.addEventListener("submit", (evt) => {
   evt.preventDefault();
   addPublication(titlePublication.value, linkPublication.value);
-  titlePublication.value = "";
-  linkPublication.value = "";
+  editFormPublication.reset();
   closePopupPublication();
 });
 
