@@ -122,7 +122,7 @@ initialCards.forEach(function (element) {
 });
 
 const editFormPublication = popupPublication.querySelector(
-  ".edit-form_type_publication"
+  ".popup-form_type_publication"
 );
 const titlePublication = editFormPublication.querySelector(
   ".popup__input_type_title"
