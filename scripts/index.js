@@ -24,14 +24,11 @@ const closePopupWithEsc = (evt) => {
 const openPopup = (popup) => {
   popup.classList.add("popup_opened");
   addEventListener("keydown", closePopupWithEsc);
-  popup.addEventListener(
-    "click",
-    popup.addEventListener("click", (evt) => {
-      if (evt.target.classList.contains("popup_opened")) {
-        closePopup(popup);
-      }
-    })
-  );
+  popup.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+  });
 };
 const closePopup = (popup) => {
   popup.classList.remove("popup_opened");
@@ -122,7 +119,7 @@ initialCards.forEach(function (element) {
 });
 
 const editFormPublication = popupPublication.querySelector(
-  ".popup-form_type_publication"
+  ".popup__form_type_publication"
 );
 const titlePublication = editFormPublication.querySelector(
   ".popup__input_type_title"
