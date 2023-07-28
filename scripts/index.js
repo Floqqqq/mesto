@@ -12,14 +12,38 @@ const profileJob = document.querySelector(
   ".profile__info-activity_type_activity"
 );
 
-const editForm = popupProfile.querySelector(".edit-form");
-const openPopup = (popup) => popup.classList.add("popup_opened");
-const closePopup = (popup) => popup.classList.remove("popup_opened");
+const editForm = popupProfile.querySelector(".popup__form");
+
+const closePopupWithEsc = (evt) => {
+  const popupOpened = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    closePopup(popupOpened);
+  }
+};
+
+const openPopup = (popup) => {
+  popup.classList.add("popup_opened");
+  addEventListener("keydown", closePopupWithEsc);
+  popup.addEventListener(
+    "click",
+    popup.addEventListener("click", (evt) => {
+      if (evt.target.classList.contains("popup_opened")) {
+        closePopup(popup);
+      }
+    })
+  );
+};
+const closePopup = (popup) => {
+  popup.classList.remove("popup_opened");
+  removeEventListener("keydown", closePopupWithEsc);
+};
+
 function openPopupProfile() {
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
   openPopup(popupProfile);
 }
+
 buttonOpenPopupProfile.addEventListener("click", openPopupProfile);
 function closePopupProfile() {
   closePopup(popupProfile);
@@ -80,17 +104,14 @@ const createCard = (link, name) => {
     elementEl.remove();
   });
 
-  //elements.append(elementEl);
   const elementImage = elementEl
     .querySelector(".element__image")
     .addEventListener("click", () => {
-      //const elementPlace = elementEl.querySelector(".element__place");
-      //const elementImages = elementEl.querySelector(".element__image");
       imageFullScreen.alt = `Изображение ${name}`;
       imageFullScreen.src = cardImage.src;
       tiitleFullScreen.textContent = cardName.textContent;
-      openPopup(popupImageFullScreen)
 
+      openPopup(popupImageFullScreen);
     });
   return elementEl;
 };
@@ -131,3 +152,12 @@ buttonClosePopupImageFullScreen.addEventListener(
   "click",
   closePopupImageFullScreen
 );
+
+enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__input-error_visible",
+});
