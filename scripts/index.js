@@ -15,24 +15,26 @@ const profileJob = document.querySelector(
 const editForm = popupProfile.querySelector(".popup__form");
 
 const closePopupWithEsc = (evt) => {
-  const popupOpened = document.querySelector(".popup_opened");
   if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
     closePopup(popupOpened);
+  }
+};
+const closePopupWithOwerley = (evt) => {
+  if (evt.target.classList.contains("popup_opened")) {
+    evt.target.classList.remove("popup_opened");
   }
 };
 
 const openPopup = (popup) => {
   popup.classList.add("popup_opened");
-  addEventListener("keydown", closePopupWithEsc);
-  popup.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("popup_opened")) {
-      closePopup(popup);
-    }
-  });
+  document.addEventListener("keydown", closePopupWithEsc);
+  popup.addEventListener("click", closePopupWithOwerley);
 };
 const closePopup = (popup) => {
   popup.classList.remove("popup_opened");
-  removeEventListener("keydown", closePopupWithEsc);
+  document.removeEventListener("keydown", closePopupWithEsc);
+  popup.removeEventListener("click", closePopupWithOwerley);
 };
 
 function openPopupProfile() {
@@ -101,15 +103,13 @@ const createCard = (link, name) => {
     elementEl.remove();
   });
 
-  const elementImage = elementEl
-    .querySelector(".element__image")
-    .addEventListener("click", () => {
-      imageFullScreen.alt = `Изображение ${name}`;
-      imageFullScreen.src = cardImage.src;
-      tiitleFullScreen.textContent = cardName.textContent;
+  cardImage.addEventListener("click", () => {
+    imageFullScreen.alt = `Изображение ${name}`;
+    imageFullScreen.src = cardImage.src;
+    tiitleFullScreen.textContent = cardName.textContent;
 
-      openPopup(popupImageFullScreen);
-    });
+    openPopup(popupImageFullScreen);
+  });
   return elementEl;
 };
 
@@ -127,9 +127,8 @@ const titlePublication = editFormPublication.querySelector(
 const linkPublication = editFormPublication.querySelector(
   ".popup__input_type_link"
 );
-const buttonAddPublication = editFormPublication.querySelector(
-  "popup__content-button"
-);
+const buttonAddPublication =
+  editFormPublication.querySelector(".popup__button");
 
 function addPublication(titleValue, linkValue) {
   const cardItem = createCard(linkValue, titleValue);
@@ -139,6 +138,8 @@ editFormPublication.addEventListener("submit", (evt) => {
   evt.preventDefault();
   addPublication(titlePublication.value, linkPublication.value);
   editFormPublication.reset();
+  buttonAddPublication.classList.add("popup__button_disabled");
+  buttonAddPublication.disabled = true;
   closePopupPublication();
 });
 
