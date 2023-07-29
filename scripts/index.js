@@ -20,21 +20,21 @@ const closePopupWithEsc = (evt) => {
     closePopup(popupOpened);
   }
 };
-const closePopupWithOwerley = (evt) => {
+const closePopupWithOverlay = (evt) => {
   if (evt.target.classList.contains("popup_opened")) {
-    evt.target.classList.remove("popup_opened");
+    closePopup(evt.target);
   }
 };
 
 const openPopup = (popup) => {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupWithEsc);
-  popup.addEventListener("click", closePopupWithOwerley);
+  popup.addEventListener("click", closePopupWithOverlay);
 };
 const closePopup = (popup) => {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupWithEsc);
-  popup.removeEventListener("click", closePopupWithOwerley);
+  popup.removeEventListener("click", closePopupWithOverlay);
 };
 
 function openPopupProfile() {
