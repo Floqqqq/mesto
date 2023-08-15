@@ -13,11 +13,9 @@ const hideInputError = (form, input, config) => {
 };
 
 const checkInputValidity = (form, input, config) => {
-  if (!input.validity.valid) {
-    showInputError(form, input, config);
-  } else {
-    hideInputError(form, input, config);
-  }
+  !input.validity.valid
+    ? showInputError(form, input, config)
+    : hideInputError(form, input, config);
 };
 
 const hasInvalidInput = (inputs) => {
