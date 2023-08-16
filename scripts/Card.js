@@ -1,10 +1,5 @@
-import { openPopup, closePopup } from "./utils.js";
-const popupImageFullScreen = document.querySelector(".popup_type_full-screen");
-const imageFullScreen = popupImageFullScreen.querySelector(
-  ".popup__figure-image"
-);
-const tiitleFullScreen =
-  popupImageFullScreen.querySelector(".popup__figcaption");
+import { openPopup } from "./utils.js";
+
 class Card {
   constructor(name, link, templateSelector) {
     this._name = name;
@@ -41,10 +36,15 @@ class Card {
       .classList.toggle("element__like_active");
   }
   _handleOpenPopup() {
-    imageFullScreen.alt = `Изображение ${this._cardName}`;
-    imageFullScreen.src = this._cardImage.src;
-    tiitleFullScreen.textContent = this._cardName.textContent;
-    openPopup(popupImageFullScreen);
+    this._popupImageFullScreen = document.querySelector(".popup_type_full-screen");
+    this._imageFullScreen = this._popupImageFullScreen.querySelector(
+    ".popup__figure-image");
+    this._tiitleFullScreen =
+    this._popupImageFullScreen.querySelector(".popup__figcaption");
+    this._imageFullScreen.alt = `Изображение ${this._cardName}`;
+    this._imageFullScreen.src = this._cardImage.src;
+    this._tiitleFullScreen.textContent = this._cardName.textContent;
+    openPopup(this._popupImageFullScreen);
   }
 
   _setEventListeners() {
@@ -56,6 +56,7 @@ class Card {
 
     this._cardImage = this._element.querySelector(".element__image");
     this._cardImage.addEventListener("click", () => {
+      
       this._handleOpenPopup();
     });
   }

@@ -9,10 +9,9 @@ class FormValidator {
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
     this._form = document.querySelector(this._templateSelector);
-    // this._input = document.querySelector(this._templateSelector);
   }
   _setEventListeners() {
-    // this._form = document.querySelector(this._templateSelector);
+    this._form = document.querySelector(this._templateSelector);
     this._inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
     this._button = this._form.querySelector(this._submitButtonSelector);
 
@@ -26,24 +25,24 @@ class FormValidator {
     });
   }
   enableValidation() {
-    const form = document.querySelector(this._formSelector);
-    form.addEventListener("submit", function (evt) {
+    this._form = document.querySelector(this._formSelector);
+    this._form.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
     this._setEventListeners();
   }
   _showInputError(input) {
-    const span = this._form.querySelector(`.${input.id}-error`);
+    this._span = this._form.querySelector(`.${input.id}-error`);
     input.classList.add(this._inputErrorClass);
-    span.textContent = input.validationMessage;
-    span.classList.add(this._errorClass);
+    this._span.textContent = input.validationMessage;
+    this._span.classList.add(this._errorClass);
   }
 
   _hideInputError(input) {
-    const span = this._form.querySelector(`.${input.id}-error`);
+    this._span = this._form.querySelector(`.${input.id}-error`);
     input.classList.remove(this._inputErrorClass);
-    span.textContent = "";
-    span.classList.remove(this._errorClass);
+    this._span.textContent = "";
+    this._span.classList.remove(this._errorClass);
   }
 
   _checkInputValidity(input) {
@@ -57,10 +56,13 @@ class FormValidator {
       return !input.validity.valid;
     });
   }
+  inactiveButton(button) {
+    button.classList.add(this._inactiveButtonClass);
+    button.disabled = true;
+  }
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
-      this._button.classList.add(this._inactiveButtonClass);
-      this._button.disabled = true;
+      this.inactiveButton(this._button);
     } else {
       this._button.classList.remove(this._inactiveButtonClass);
       this._button.disabled = false;
