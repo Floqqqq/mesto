@@ -72,7 +72,7 @@ editFormPublication.addEventListener("submit", (evt) => {
   evt.preventDefault();
   addPublication(titlePublication.value, linkPublication.value);
   editFormPublication.reset();
-  validateEditFormPublication.inactiveButton(buttonAddPublication);
+  validateEditFormPublication.inactiveButton();
   closePopupPublication();
 });
 
@@ -91,5 +91,5 @@ const validateEditFormPublication = new FormValidator(
 );
 validateEditFormPublication.enableValidation();
 
-const validatePopupProfile = new FormValidator(config, ".popup_type_profile");
-validatePopupProfile.enableValidation();
+const validateFormProfile = new FormValidator(config, ".popup__form");
+validateFormProfile.enableValidation();

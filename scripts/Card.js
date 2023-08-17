@@ -36,12 +36,15 @@ class Card {
       .classList.toggle("element__like_active");
   }
   _handleOpenPopup() {
-    this._popupImageFullScreen = document.querySelector(".popup_type_full-screen");
+    this._popupImageFullScreen = document.querySelector(
+      ".popup_type_full-screen"
+    );
     this._imageFullScreen = this._popupImageFullScreen.querySelector(
-    ".popup__figure-image");
+      ".popup__figure-image"
+    );
     this._tiitleFullScreen =
-    this._popupImageFullScreen.querySelector(".popup__figcaption");
-    this._imageFullScreen.alt = `Изображение ${this._cardName}`;
+      this._popupImageFullScreen.querySelector(".popup__figcaption");
+    this._imageFullScreen.alt = `Изображение ${this._name}`;
     this._imageFullScreen.src = this._cardImage.src;
     this._tiitleFullScreen.textContent = this._cardName.textContent;
     openPopup(this._popupImageFullScreen);
@@ -56,7 +59,6 @@ class Card {
 
     this._cardImage = this._element.querySelector(".element__image");
     this._cardImage.addEventListener("click", () => {
-      
       this._handleOpenPopup();
     });
   }
