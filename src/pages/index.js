@@ -53,7 +53,6 @@ const popupFormProfile = new PopupWithForm({
   popup: popupProfile,
   handleSubmitForm: (data) => {
     userInfo.setUserInfo(data);
-    validateFormProfile.resetValidator();
     popupFormProfile.close();
   },
 });
@@ -66,6 +65,7 @@ const userInfo = new UserInfo({
 buttonOpenPopupProfile.addEventListener("click", () => {
   const formValues = userInfo.getUserInfo();
   popupFormProfile.open();
+  validateFormProfile.resetValidator();
   inputJob.value = formValues.info;
   inputName.value = formValues.name;
 });
@@ -76,13 +76,13 @@ const popupFormPublication = new PopupWithForm({
     const cardElement = generateCard(data);
     cardList.addNewItem(cardElement);
     popupFormPublication.close();
-    validateEditFormPublication.resetValidator();
   },
 });
 popupFormPublication.setEventListeners();
 
 buttonOpenPopupPublication.addEventListener("click", () => {
   popupFormPublication.open();
+  validateEditFormPublication.resetValidator();
 });
 cardList.renderer();
 //

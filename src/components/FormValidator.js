@@ -24,10 +24,6 @@ export default class FormValidator {
     });
   }
   enableValidation() {
-    this._selectorForm = document.querySelector(this._formSelector);
-    this._selectorForm.addEventListener("submit", function (evt) {
-      evt.preventDefault();
-    });
     this._setEventListeners();
   }
   _showInputError(input) {
@@ -55,13 +51,13 @@ export default class FormValidator {
       return !input.validity.valid;
     });
   }
-  inactiveButton() {
+  disableButton() {
     this._button.classList.add(this._inactiveButtonClass);
     this._button.disabled = true;
   }
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
-      this.inactiveButton();
+      this.disableButton();
     } else {
       this._button.classList.remove(this._inactiveButtonClass);
       this._button.disabled = false;

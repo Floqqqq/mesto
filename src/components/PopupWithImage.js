@@ -11,8 +11,4 @@ export default class PopupWithImage extends Popup {
     this._imageFullScreen.src = link;
     this._tiitleFullScreen.textContent = name;
   }
-
-  setEventListeners() {
-    super.setEventListeners();
-  }
 }

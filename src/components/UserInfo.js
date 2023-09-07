@@ -8,7 +8,6 @@ export default class UserInfo {
       name: this._userName.textContent,
       info: this._userInfo.textContent,
     };
-    console.log(userInfo);
     return userInfo;
   }
   setUserInfo(data) {

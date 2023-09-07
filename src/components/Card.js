@@ -7,7 +7,7 @@ class Card {
   }
   _getTemplate() {
     const cardElement = document
-      .querySelector(".elemet-template")
+      .querySelector(this._templateSelector)
       .content.querySelector(".element")
       .cloneNode(true);
 
@@ -30,16 +30,14 @@ class Card {
   }
 
   _hendleLikedCard() {
-    this._element
-      .querySelector(".element__like")
-      .classList.toggle("element__like_active");
+    this._cardLike.classList.toggle("element__like_active");
   }
   _setEventListeners() {
     const deleteCard = this._element.querySelector(".element__trash");
     deleteCard.addEventListener("click", this._hendleDeleteCard.bind(this));
 
-    const cardLike = this._element.querySelector(".element__like");
-    cardLike.addEventListener("click", this._hendleLikedCard.bind(this));
+    this._cardLike = this._element.querySelector(".element__like");
+    this._cardLike.addEventListener("click", this._hendleLikedCard.bind(this));
 
     this._cardImage = this._element.querySelector(".element__image");
     this._cardImage.addEventListener("click", () => {
